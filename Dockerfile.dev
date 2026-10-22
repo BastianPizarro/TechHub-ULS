@@ -1,0 +1,43 @@
+FROM php:8.2-apache
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        libpq-dev \
+        unzip \
+        git \
+    && docker-php-ext-install pdo pdo_pgsql \
+    && a2enmod rewrite \
+    && echo "ServerName localhost" >> /etc/apache2/apache2.conf \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
+
+RUN sed -ri \
+    -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' \
+    /etc/apache2/sites-available/*.conf \
+    /etc/apache2/apache2.conf \
+    /etc/apache2/conf-available/*.conf
+
+# Permite que public/.htaccess reescriba las rutas limpias (/proyectos, etc.)
+# hacia index.php; por defecto Apache trae AllowOverride None.
+RUN sed -ri 's/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
+
+COPY docker/dev-entrypoint.sh /usr/local/bin/dev-entrypoint.sh
+# Quita CRLF por si el script llega con saltos de línea de Windows
+# (core.autocrlf=true): con "#!/bin/sh\r" el exec falla con "not found".
+RUN sed -i 's/\r$//' /usr/local/bin/dev-entrypoint.sh \
+    && chmod +x /usr/local/bin/dev-entrypoint.sh
+
+# Límites de subida: 5MB real lo valida MediaService en la app; estos valores
+# solo evitan que PHP descarte el request completo con post_max_size por defecto (8M).
+COPY docker/php-uploads.ini /usr/local/etc/php/conf.d/99-uploads.ini
+
+WORKDIR /var/www/html
+
+EXPOSE 80
+
+# Se mantiene el ENTRYPOINT de la imagen base (docker-php-entrypoint) y solo se
+# reemplaza el CMD, para no perder la inicialización estándar de PHP/Apache.
+CMD ["/usr/local/bin/dev-entrypoint.sh"]
