@@ -1,5 +1,5 @@
 /*
- * SFL ULS Lab — Panel de Administración
+ * Techhub ULS — Panel de Administración
  * Estilos base propios para el panel, navegación por pestañas y componentes.
  * Sin dependencias externas (sin React ni Tailwind).
  */
@@ -141,7 +141,7 @@ textarea {
 }
 
 .admin-tab.active {
-  background-color: var(--destructive, #CA2C2C); /* Rojo SFL #CA2C2C */
+  background-color: var(--destructive, #CA2C2C); /* Rojo Techhub #CA2C2C */
   border-color: var(--destructive, #CA2C2C);
   color: #ffffff;
   font-weight: 600;

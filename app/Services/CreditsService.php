@@ -113,9 +113,9 @@ class CreditsService
         string $senderEmail,
         string $message
     ): bool {
-        $subject = "[SFL Lab - Créditos] Mensaje para {$recipientName}";
+        $subject = "[Techhub - Créditos] Mensaje para {$recipientName}";
 
-        $textBody = "Has recibido un nuevo mensaje desde la sección de Créditos del sitio web SFL ULS Lab.\n\n"
+        $textBody = "Has recibido un nuevo mensaje desde la sección de Créditos del sitio web Techhub ULS.\n\n"
             . "------------------------------------------------------------\n"
             . "Destinatario: {$recipientName} ({$recipientRole})\n"
             . "Remitente:    {$senderName}\n"
@@ -125,7 +125,7 @@ class CreditsService
             . "Mensaje:\n"
             . "{$message}\n\n"
             . "------------------------------------------------------------\n"
-            . "Software Factory Lab — Universidad de La Serena\n";
+            . "Techhub — Universidad de La Serena\n";
 
         try {
             $htmlBody = nl2br(htmlspecialchars($textBody, ENT_QUOTES, 'UTF-8'));
@@ -142,7 +142,7 @@ class CreditsService
         $encodedSubject = "=?UTF-8?B?" . base64_encode($subject) . "?=";
 
         $headers = [
-            'From: SFL ULS Lab <contacto@sfl.uls.cl>',
+            'From: Techhub ULS <contacto@techhub.cl>',
             "Reply-To: {$cleanSenderName} <{$cleanSenderEmail}>",
             'X-Mailer: PHP/' . phpversion(),
             'MIME-Version: 1.0',

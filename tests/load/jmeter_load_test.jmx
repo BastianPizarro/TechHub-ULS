@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="SFL ULS Lab - Load Test (110 Usuarios Concurrentes)" enabled="true">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Techhub ULS - Load Test (110 Usuarios Concurrentes)" enabled="true">
       <stringProp name="TestPlan.comments">Prueba de carga del SRS: 110 usuarios simultáneos, 95% de respuestas &lt; 2s</stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>

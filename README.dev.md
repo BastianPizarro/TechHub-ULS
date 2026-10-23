@@ -125,15 +125,12 @@ puesto.
 
 ### 5.0 Migraciones (bases ya cargadas)
 
-Para bases que ya tenían datos con la marca anterior, ejecuta el SQL de cambio
-de marca (una sola vez):
+Las migraciones disponibles (`config/migrations/*.sql`) se aplican sobre la
+base ya existente:
 
 ```bash
-docker compose -f docker-compose.dev.yml exec -T postgres psql -U $DB_USER -d $POSTGRES_DB -f /tmp/migrations/009_brand_change_sfluls.sql
+docker compose -f docker-compose.dev.yml exec -T postgres psql -U $DB_USER -d $POSTGRES_DB -f /tmp/migrations/<nombre_migracion>.sql
 ```
-
-El resto de migraciones (`config/migrations/*.sql`) se aplican igual sobre la
-base ya existente.
 
 Para verificar las tablas:
 

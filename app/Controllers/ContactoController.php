@@ -36,12 +36,12 @@ final class ContactoController extends Controller
         unset($_SESSION['_flash_success'], $_SESSION['_flash_error']);
 
         $this->render('contacto', [
-            'pageTitle' => 'Contáctenos — SFL ULS Lab',
-            'metaDescription' => 'Envía tu consulta o requerimiento al Software Factory Lab de la Universidad de La Serena.',
+            'pageTitle' => 'Contáctenos — Techhub ULS',
+            'metaDescription' => 'Envía tu consulta o requerimiento al Techhub Universidad de La Serena.',
             'flashSuccess' => $flashSuccess,
             'flashError' => $flashError,
             'enlacesFooter' => $footer['links'] ?? [],
-            'contacto' => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@sfl.uls.cl'],
+            'contacto' => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@techhub.cl'],
         ]);
     }
 

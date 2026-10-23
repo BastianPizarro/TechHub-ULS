@@ -107,7 +107,7 @@ class CreditsServiceTest extends TestCase
             ->with(
                 $this->isType('string'),
                 $this->equalTo('Vicente Campaña'),
-                $this->stringContains('[SFL Lab - Créditos]'),
+                $this->stringContains('[Techhub - Créditos]'),
                 $this->stringContains('Mensaje de prueba')
             )
             ->willReturn(true);

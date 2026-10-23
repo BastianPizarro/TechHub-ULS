@@ -8,7 +8,7 @@ declare(strict_types=1);
 $siteContent ??= null;
 
 $sobreTitulo = $siteContent['sobre_titulo'] ?? 'Sobre nosotros';
-$sobreTexto = $siteContent['sobre_texto'] ?? "Software Factory Lab es la fábrica de software de la Universidad de La Serena, donde estudiantes y profesionales desarrollan soluciones digitales reales para instituciones y empresas de la región, bajo estándares de la industria.";
+$sobreTexto = $siteContent['sobre_texto'] ?? "Techhub es el laboratorio de software de la Universidad de La Serena, donde estudiantes y profesionales desarrollan soluciones digitales reales para instituciones y empresas de la región, bajo estándares de la industria.";
 $misionTitulo = $siteContent['mision_titulo'] ?? 'Misión, visión y objetivos';
 $misionTexto = $siteContent['mision_texto'] ?? "Formar talento tecnológico mediante la práctica en proyectos reales, entregando productos de calidad que aporten valor al desarrollo regional. Buscamos ser un referente en innovación, transferencia tecnológica y vinculación con el medio.";
 ?>

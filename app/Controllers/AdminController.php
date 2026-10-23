@@ -124,7 +124,7 @@ final class AdminController extends AdminControllerBase
             }
         }
 
-        $footer = ['links' => [], 'info' => ['address' => 'La Serena, Chile', 'email' => 'contacto@sfl.uls.cl']];
+        $footer = ['links' => [], 'info' => ['address' => 'La Serena, Chile', 'email' => 'contacto@techhub.cl']];
         $editingFooterLink = null;
         try {
             $footer = $this->footerService->getAll();
@@ -177,8 +177,8 @@ final class AdminController extends AdminControllerBase
         unset($_SESSION['_flash_success'], $_SESSION['_flash_error']);
 
         $this->render('admin', [
-            'pageTitle'          => 'Panel de Administración — SFL ULS Lab',
-            'metaDescription'    => 'Panel de administración y gestión de contenidos del Software Factory Lab.',
+            'pageTitle'          => 'Panel de Administración — Techhub ULS',
+            'metaDescription'    => 'Panel de administración y gestión de contenidos del Techhub.',
             'extraCss'           => ['/assets/css/admin.css'],
             'user'               => $user,
             'activeTab'          => $tab,
@@ -200,7 +200,7 @@ final class AdminController extends AdminControllerBase
             'flashSuccess'       => $flashSuccess,
             'flashError'         => $flashError,
             'enlacesFooter'      => $footer['links'] ?? [],
-            'contacto'           => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@sfl.uls.cl'],
+            'contacto'           => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@techhub.cl'],
         ]);
     }
 }

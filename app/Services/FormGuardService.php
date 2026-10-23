@@ -56,7 +56,7 @@ class FormGuardService
                 'email' => trim($email) !== '' ? mb_substr(trim($email), 0, 255) : null,
             ]);
         } catch (\Throwable $e) {
-            error_log('[SFL ULS] No se pudo registrar el envío de formulario: ' . $e->getMessage());
+            error_log('[Techhub ULS] No se pudo registrar el envío de formulario: ' . $e->getMessage());
         }
     }
 
@@ -87,7 +87,7 @@ class FormGuardService
 
             return $emailCount >= self::MAX_SUBMISSIONS;
         } catch (\Throwable $e) {
-            error_log('[SFL ULS] No se pudo evaluar el límite de envíos: ' . $e->getMessage());
+            error_log('[Techhub ULS] No se pudo evaluar el límite de envíos: ' . $e->getMessage());
             return false;
         }
     }

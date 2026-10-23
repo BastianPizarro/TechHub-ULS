@@ -33,15 +33,15 @@ final class LoginController extends Controller
         $footer = $this->footerService->getAll();
 
         $this->render('login', [
-            'pageTitle'       => 'Iniciar sesión — SFL ULS Lab',
-            'metaDescription' => 'Acceso al panel interno del Software Factory Lab de la Universidad de La Serena.',
+            'pageTitle'       => 'Iniciar sesión — Techhub ULS',
+            'metaDescription' => 'Acceso al panel interno del Techhub Universidad de La Serena.',
             'csrfToken'       => csrfToken(),
             'errors'          => $_SESSION['_login_errors'] ?? [],
             'email'           => $_SESSION['_login_email'] ?? '',
             'flashSuccess'    => $_SESSION['_login_flash_success'] ?? null,
             'sessionExpired'  => !empty($_SESSION['_session_expired']),
             'enlacesFooter'   => $footer['links'] ?? [],
-            'contacto'        => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@sfl.uls.cl'],
+            'contacto'        => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@techhub.cl'],
         ]);
 
         unset(

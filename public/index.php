@@ -24,7 +24,7 @@ sessionStart();
 //  entrega una respuesta 500 genérica, sin exponer detalles internos.
 set_exception_handler(static function (\Throwable $e): void {
     error_log(sprintf(
-        '[SFL ULS] Excepción no controlada: %s en %s:%d',
+        '[Techhub ULS] Excepción no controlada: %s en %s:%d',
         $e->getMessage(),
         $e->getFile(),
         $e->getLine()
@@ -50,7 +50,7 @@ register_shutdown_function(static function (): void {
     }
 
     error_log(sprintf(
-        '[SFL ULS] Error fatal: %s en %s:%d',
+        '[Techhub ULS] Error fatal: %s en %s:%d',
         $err['message'],
         $err['file'],
         $err['line']

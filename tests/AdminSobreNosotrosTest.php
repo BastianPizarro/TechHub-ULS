@@ -23,7 +23,7 @@ final class AdminSobreNosotrosTest extends TestCase
 
         $siteContent = [
             'sobre_titulo'  => 'Sobre nosotros',
-            'sobre_texto'   => 'Software Factory Lab es la fábrica de software...',
+            'sobre_texto'   => 'Techhub es el laboratorio de software...',
             'mision_titulo' => 'Misión, visión y objetivos',
             'mision_texto'  => 'Formar talento tecnológico mediante la práctica...',
         ];

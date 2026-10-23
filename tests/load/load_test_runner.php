@@ -19,7 +19,7 @@ $concurrency = (int) ($argv[2] ?? 110);
 $requestsPerUser = (int) ($argv[3] ?? 2);
 
 echo "===============================================================\n";
-echo " SFL ULS Lab - Prueba de Carga Concurrente (SRS Requirement)\n";
+echo " Techhub ULS - Prueba de Carga Concurrente (SRS Requirement)\n";
 echo "===============================================================\n";
 echo " Base URL:            {$baseUrl}\n";
 echo " Usuarios simultáneos: {$concurrency}\n";

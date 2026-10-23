@@ -40,14 +40,14 @@ final class CreditsController extends Controller
         unset($_SESSION['flash_success'], $_SESSION['flash_error']);
 
         $this->render('credits', [
-            'pageTitle'       => 'Créditos — Equipo Charlie — SFL ULS Lab',
-            'metaDescription' => 'Créditos y equipo de desarrollo y diseño UI/UX del software Software Factory Lab.',
+            'pageTitle'       => 'Créditos — Equipo Charlie — Techhub ULS',
+            'metaDescription' => 'Créditos y equipo de desarrollo y diseño UI/UX de Techhub.',
             'miembros'        => $miembros,
             'enlacesFooter'   => $footer['links'] ?? [],
             'contacto'        => $footer['info'] ?? [
                 'address'          => 'La Serena, Chile',
-                'email'            => 'contacto@sfl.uls.cl',
-                'copyright_text'   => '© SFL. Todos los derechos reservados',
+                'email'            => 'contacto@techhub.cl',
+                'copyright_text'   => '© Techhub. Todos los derechos reservados',
                 'social_linkedin'  => '#',
                 'social_twitter'   => '#',
                 'social_instagram' => '#',

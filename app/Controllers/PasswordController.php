@@ -31,14 +31,14 @@ final class PasswordController extends Controller
         $footer = (new FooterService())->getAll();
 
         $this->render('cambiar-password', [
-            'pageTitle'       => 'Cambiar contraseña — SFL ULS Lab',
-            'metaDescription' => 'Cambio de contraseña para usuarios de SFL ULS Lab.',
+            'pageTitle'       => 'Cambiar contraseña — Techhub ULS',
+            'metaDescription' => 'Cambio de contraseña para usuarios de Techhub ULS.',
             'csrfToken'       => csrfToken(),
             'errors'          => $_SESSION['_password_errors'] ?? [],
             'success'         => $_SESSION['_password_success'] ?? null,
             'user'            => authUser(),
             'enlacesFooter'   => $footer['links'],
-            'contacto'        => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@sfl.uls.cl'],
+            'contacto'        => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@techhub.cl'],
         ]);
 
         unset($_SESSION['_password_errors'], $_SESSION['_password_success']);
