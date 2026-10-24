@@ -27,6 +27,7 @@ services:
       RESEND_API_KEY: "${RESEND_API_KEY:-}"
       RESEND_FROM: "${RESEND_FROM:-}"
       CONTACT_NOTIFY_EMAIL: "${CONTACT_NOTIFY_EMAIL:-}"
+      SFL_URL: "${SFL_URL:-https://www.sfl/credits}"
     depends_on:
       postgres:
         condition: service_healthy

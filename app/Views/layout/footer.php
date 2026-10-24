@@ -5,6 +5,8 @@
  */
 $enlacesFooter ??= [];
 $contacto ??= [];
+// URL fija del sitio de Software Factory Lab (creador del sitio), definida en SFL_URL (.env).
+$sflUrl = getenv('SFL_URL') ?: 'https://www.sfl/credits';
 $currentPath ??= parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/';
 $grupos = [];
 foreach ($enlacesFooter as $enlace) {
@@ -77,7 +79,7 @@ if ($grupos === []) {
       <div class="footer-bottom">
         <p class="footer-copy"><?= htmlspecialchars($contacto['copyright_text'] ?? '© Techhub. Todos los derechos reservados', ENT_QUOTES, 'UTF-8') ?></p>
         <button type="button" class="footer-legal-link" id="legal-reopen-btn">Aviso legal</button>
-        <a href="/credits" class="footer-credits-link">Página creada por equipo Charlie</a>
+        <a href="<?= htmlspecialchars($sflUrl, ENT_QUOTES, 'UTF-8') ?>" class="footer-credits-link" target="_blank" rel="noopener noreferrer">Página creada por Software Factory Lab</a>
       </div>
     </div>
   </footer>
@@ -104,7 +106,7 @@ if ($grupos === []) {
       <h3>Protección de datos personales</h3>
       <p>El tratamiento de los datos personales recopilados a través de este sitio (por ejemplo, en el formulario de contacto) se rige por la Ley N° 19.628 sobre Protección de la Vida Privada y la Ley N° 21.719, garantizando a los titulares sus derechos ARCO+ (Acceso, Rectificación, Supresión, Oposición, Portabilidad y Bloqueo).</p>
 
-      <p class="legal-modal-footnote">Plataforma desarrollada en 2026 por el equipo Charlie para la Universidad de La Serena.</p>
+      <p class="legal-modal-footnote">Plataforma desarrollada en 2026 por Software Factory Lab para la Universidad de La Serena.</p>
     </div>
 
     <div class="legal-modal-actions">

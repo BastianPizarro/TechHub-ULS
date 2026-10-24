@@ -82,6 +82,9 @@ SMTP_USER=no-reply@uls.cl
 SMTP_PASS=
 SMTP_FROM=no-reply@uls.cl
 SMTP_FROM_NAME=TechHub ULS
+
+# URL del sitio de Software Factory Lab (enlace "Página creada por..." del footer)
+SFL_URL=https://www.sfl/credits
 ```
 
 > ⚠️ **Importante**: Asegúrate de que el archivo `.env` tenga permisos restrictivos para que solo el usuario del servidor web pueda leerlo (`chmod 600 .env`).
