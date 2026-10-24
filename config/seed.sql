@@ -15,6 +15,43 @@
 --
 -- =============================================================================
 
+--
+-- Data for Name: role; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.role (id, name, description) FROM stdin;
+1	superadmin	Acceso total al sistema
+2	admin	Gestión de contenido y usuarios
+3	editor	Edición de contenido
+4	redactor	Creación de noticias propias
+\.
+
+
+--
+-- Data for Name: news_status; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.news_status (id, name) FROM stdin;
+1	pendiente
+2	publicada
+3	archivada
+\.
+
+
+--
+-- Data for Name: tag; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.tag (id, name) FROM stdin;
+1	Desarrollo Web
+2	Inteligencia Artificial
+3	Ciberseguridad
+4	Cloud Computing
+5	DevOps
+\.
+
+
+--
 -- Data for Name: app_user; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -85,17 +122,6 @@ COPY public.news (id, author_id, editor_id, status_id, tag_id, title, subtitle, 
 
 
 --
--- Data for Name: news_status; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.news_status (id, name) FROM stdin;
-1	pendiente
-2	publicada
-3	archivada
-\.
-
-
---
 -- Data for Name: project; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -103,18 +129,6 @@ COPY public.project (id, name, description, image, link, active) FROM stdin;
 1	Sistema de Gestión Académica	Plataforma para gestión de notas y asistencia universitaria	proyecto-1.jpg	\N	t
 2	App de Seguimiento de Salud	Aplicación móvil para monitoreo de signos vitales	proyecto-1.jpg	\N	t
 3	Portal de Vinculación con el Medio	Sitio web que conecta proyectos estudiantiles con la comunidad	proyecto-1.jpg	\N	t
-\.
-
-
---
--- Data for Name: role; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.role (id, name, description) FROM stdin;
-1	superadmin	Acceso total al sistema
-2	admin	Gestión de contenido y usuarios
-3	editor	Edición de contenido
-4	redactor	Creación de noticias propias
 \.
 
 
@@ -134,19 +148,6 @@ COPY public.service (id, name, description, image, link, active) FROM stdin;
 --
 
 COPY public.staff_member (id, name, "position", photo, description) FROM stdin;
-\.
-
-
---
--- Data for Name: tag; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.tag (id, name) FROM stdin;
-1	Desarrollo Web
-2	Inteligencia Artificial
-3	Ciberseguridad
-4	Cloud Computing
-5	DevOps
 \.
 
 
@@ -189,7 +190,7 @@ SELECT pg_catalog.setval('public.enlaces_footer_id_seq', 6, true);
 -- Name: footer_info_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.footer_info_id_seq', 1, false);
+SELECT pg_catalog.setval('public.footer_info_id_seq', 1, true);
 
 
 --
@@ -203,7 +204,7 @@ SELECT pg_catalog.setval('public.news_id_seq', 2, true);
 -- Name: news_status_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.news_status_id_seq', 1, false);
+SELECT pg_catalog.setval('public.news_status_id_seq', 3, true);
 
 
 --
@@ -217,7 +218,7 @@ SELECT pg_catalog.setval('public.project_id_seq', 3, true);
 -- Name: role_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.role_id_seq', 1, false);
+SELECT pg_catalog.setval('public.role_id_seq', 4, true);
 
 
 --
