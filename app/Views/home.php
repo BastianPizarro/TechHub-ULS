@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 declare(strict_types=1);
 
@@ -11,12 +11,12 @@ declare(strict_types=1);
 ?>
 <section class="hero" id="sobre-nosotros">
   <div class="container hero-inner">
-    <img src="/assets/images/logo-sfl-color.png" alt="Software Factory Lab Universidad de La Serena" width="260" height="86" class="hero-logo">
+    <img src="/assets/images/logo-techhub-color.svg" alt="Tech Hub Universidad de La Serena" width="260" height="86" class="hero-logo">
 
     <h1><?= htmlspecialchars((string) ($contenido['sobre_titulo'] ?? ''), ENT_QUOTES, 'UTF-8') ?></h1>
     <p><?= eParagraphs($contenido['sobre_texto'] ?? null) ?></p>
 
-    <?php // Los campos de misión pueden quedar vacíos (NULL) desde el panel: se omite el bloque. ?>
+    <?php // Los campos de misiÃ³n pueden quedar vacÃ­os (NULL) desde el panel: se omite el bloque. ?>
     <?php if (trim((string) ($contenido['mision_titulo'] ?? '')) !== '') : ?>
       <h2><?= htmlspecialchars((string) $contenido['mision_titulo'], ENT_QUOTES, 'UTF-8') ?></h2>
     <?php endif; ?>
@@ -24,15 +24,15 @@ declare(strict_types=1);
       <p><?= eParagraphs($contenido['mision_texto']) ?></p>
     <?php endif; ?>
 
-    <a href="/contacto" class="btn btn-destructive">Contáctenos</a>
+    <a href="/contacto" class="btn btn-destructive">ContÃ¡ctenos</a>
   </div>
 </section>
 
 <section class="section" id="contacto">
   <div class="container contact-cta">
-    <h2 class="section-title">¿Tienes un proyecto en mente?</h2>
-    <p>Escríbenos y conversemos sobre cómo el laboratorio puede ayudarte.</p>
-    <a href="/contacto" class="btn btn-destructive">Contáctenos</a>
+    <h2 class="section-title">Â¿Tienes un proyecto en mente?</h2>
+    <p>EscrÃ­benos y conversemos sobre cÃ³mo el laboratorio puede ayudarte.</p>
+    <a href="/contacto" class="btn btn-destructive">ContÃ¡ctenos</a>
   </div>
 </section>
 
@@ -48,7 +48,7 @@ declare(strict_types=1);
           <div class="card-body">
             <h3><?= htmlspecialchars($p['titulo'], ENT_QUOTES, 'UTF-8') ?></h3>
             <p><?= htmlspecialchars($p['descripcion'], ENT_QUOTES, 'UTF-8') ?></p>
-            <a href="<?= !empty($p['id']) ? '/proyectos/' . (int) $p['id'] : '/proyectos' ?>" class="btn btn-destructive btn-sm">Ver más</a>
+            <a href="<?= !empty($p['id']) ? '/proyectos/' . (int) $p['id'] : '/proyectos' ?>" class="btn btn-destructive btn-sm">Ver mÃ¡s</a>
           </div>
         </article>
       <?php endforeach; ?>
@@ -102,7 +102,7 @@ declare(strict_types=1);
       <?php endforeach; ?>
     </div>
     <div class="section-cta">
-      <a href="/noticias" class="btn btn-destructive">Ver más</a>
+      <a href="/noticias" class="btn btn-destructive">Ver mÃ¡s</a>
     </div>
   </div>
 </section>
