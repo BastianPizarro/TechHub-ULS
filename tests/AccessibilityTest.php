@@ -43,7 +43,7 @@ final class AccessibilityTest extends TestCase
         $this->assertStringContainsString('aria-controls="mobile-nav"', $output);
 
         // 5. Logo alt text
-        $this->assertStringContainsString('alt="Software Factory Lab Universidad de La Serena"', $output);
+        $this->assertStringContainsString('alt="Tech Hub Universidad de La Serena"', $output);
     }
 
     public function testFooterHasAccessibleLandmarksAndSocialLabels(): void
