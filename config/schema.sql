@@ -12,8 +12,6 @@
 -- quedarían a su nombre y la aplicación no podría operar sobre ellas.
 --
 
-\restrict 7QUYGPQx6iLPUsV0sozO9TS0ZTuYLgWUJZTW2tkxIiS1j1K0zsMF7t8Z8iPmhXM
-
 -- Dumped from database version 17.10 (Debian 17.10-1.pgdg13+1)
 -- Dumped by pg_dump version 17.10 (Debian 17.10-1.pgdg13+1)
 
@@ -973,7 +971,5 @@ CREATE INDEX idx_staff_member_orden ON public.staff_member USING btree (orden AS
 --
 -- PostgreSQL database dump complete
 --
-
-\unrestrict 7QUYGPQx6iLPUsV0sozO9TS0ZTuYLgWUJZTW2tkxIiS1j1K0zsMF7t8Z8iPmhXM
 
 
