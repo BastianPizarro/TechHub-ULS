@@ -46,7 +46,7 @@ if ($isLoggedIn) {
   <header class="site-header" role="banner">
     <div class="container header-bar">
       <a href="/" class="brand" aria-label="SFL ULS Lab — Volver al inicio">
-        <img src="/assets/images/logo-sfl-color.png" alt="Software Factory Lab Universidad de La Serena" width="120" height="40" class="brand-logo">
+        <img src="/assets/images/logo-techhub-color.svg" alt="Tech Hub Universidad de La Serena" width="120" height="40" class="brand-logo">
       </a>
 
       <div class="nav-actions">

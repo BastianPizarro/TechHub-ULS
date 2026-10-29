@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" width="100%" height="100%">
+  <!-- Isotipo Tech Hub Blanco/Cian -->
+  <g transform="translate(10, 10)">
+    <polygon points="40,2 75,22 75,62 40,82 5,62 5,22" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linejoin="round" />
+    <line x1="40" y1="2" x2="40" y2="42" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+    <line x1="5" y1="62" x2="40" y2="42" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+    <line x1="75" y1="62" x2="40" y2="42" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+    <circle cx="40" cy="42" r="7.5" fill="#00B4D8" />
+    <circle cx="40" cy="2" r="4.5" fill="#FFFFFF" />
+    <circle cx="75" cy="22" r="4.5" fill="#00B4D8" />
+    <circle cx="75" cy="62" r="4.5" fill="#FFFFFF" />
+    <circle cx="40" cy="82" r="4.5" fill="#00B4D8" />
+    <circle cx="5" cy="62" r="4.5" fill="#FFFFFF" />
+    <circle cx="5" cy="22" r="4.5" fill="#00B4D8" />
+  </g>
+
+  <!-- Texto Principal: TECH HUB en Blanco y Cian -->
+  <text x="108" y="55" font-family="'Archivo', 'Barlow', 'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="44" fill="#FFFFFF" letter-spacing="-0.5">TECH<tspan fill="#00B4D8">HUB</tspan></text>
+
+  <!-- Bajada Institucional: UNIVERSIDAD DE LA SERENA en Blanco suave -->
+  <text x="110" y="76" font-family="'Barlow', 'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="13" fill="#E2E8F0" letter-spacing="3.5">UNIVERSIDAD DE LA SERENA</text>
+</svg>

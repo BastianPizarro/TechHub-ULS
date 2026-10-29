@@ -16,9 +16,9 @@ textarea {
   background-color: var(--background);
 }
 
-/* ══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    ENCABEZADO DEL PANEL
-   ══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .admin-header {
   display: flex;
   justify-content: space-between;
@@ -107,9 +107,9 @@ textarea {
   color: var(--destructive);
 }
 
-/* ══════════════════════════════════════════════
-   BARRA DE PESTAÑAS (TABS)
-   ══════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   BARRA DE PESTAÃ‘AS (TABS)
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .admin-tabs {
   display: flex;
   align-items: center;
@@ -147,9 +147,9 @@ textarea {
   font-weight: 600;
 }
 
-/* ══════════════════════════════════════════════
-   DASHBOARD / RESUMEN Y MÉTRICAS
-   ══════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   DASHBOARD / RESUMEN Y MÃ‰TRICAS
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .admin-welcome-card {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   border: 1px solid var(--border);
@@ -226,9 +226,9 @@ textarea {
   color: var(--brand-dark);
 }
 
-/* ══════════════════════════════════════════════
-   ESTRUCTURA DE CONTENIDO PARA PESTAÑAS (MOCKUP)
-   ══════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   ESTRUCTURA DE CONTENIDO PARA PESTAÃ‘AS (MOCKUP)
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .admin-tab-content-title {
   font-family: var(--font-display);
   font-size: 1.25rem;
@@ -351,13 +351,13 @@ textarea {
 }
 
 .admin-btn-icon.delete {
-  background-color: var(--destructive, #CA2C2C);
-  border-color: var(--destructive, #CA2C2C);
+  background-color: var(--destructive, #0066CC);
+  border-color: var(--destructive, #0066CC);
   color: #ffffff;
 }
 
 .admin-btn-icon.delete:hover {
-  background-color: var(--destructive-dark, #a82323);
+  background-color: var(--destructive-dark, #004C99);
 }
 
 .admin-btn-icon.approve {
@@ -378,7 +378,7 @@ textarea {
 
 .admin-btn-icon.unapprove:hover {
   background-color: #f1f5f9;
-  color: var(--destructive, #CA2C2C);
+  color: var(--destructive, #0066CC);
 }
 
 .admin-badge-pending {
@@ -524,7 +524,7 @@ textarea {
 }
 
 .admin-cancel-edit:hover {
-  color: var(--destructive, #CA2C2C);
+  color: var(--destructive, #0066CC);
 }
 
 .admin-badge-draft {
@@ -542,7 +542,7 @@ textarea {
 
 .admin-btn-submit {
   width: 100%;
-  background-color: var(--destructive, #CA2C2C);
+  background-color: var(--destructive, #0066CC);
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -556,12 +556,12 @@ textarea {
 }
 
 .admin-btn-submit:hover {
-  background-color: var(--destructive-dark, #a82323);
+  background-color: var(--destructive-dark, #004C99);
 }
 
-/* ══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    ALERTAS Y MENSAJES
-   ══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .admin-alert {
   padding: 12px 16px;
   border-radius: var(--radius);
@@ -599,9 +599,9 @@ textarea {
   color: var(--muted-foreground);
 }
 
-/* ══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    USUARIOS Y ROLES (MOCKUP 6)
-   ══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .admin-users-wrapper {
   max-width: 860px;
 }
@@ -664,19 +664,19 @@ textarea {
 }
 
 .admin-role-btn.active {
-  background-color: var(--destructive, #CA2C2C);
-  border-color: var(--destructive, #CA2C2C);
+  background-color: var(--destructive, #0066CC);
+  border-color: var(--destructive, #0066CC);
   color: #ffffff;
   font-weight: 600;
 }
 
 .admin-role-btn.active:hover {
-  background-color: var(--destructive-dark, #a82323);
+  background-color: var(--destructive-dark, #004C99);
 }
 
-/* ══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    UTILIDADES ADMIN (COD-15)
-   ══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .admin-item-info-pl4 {
   padding-left: 4px;
 }

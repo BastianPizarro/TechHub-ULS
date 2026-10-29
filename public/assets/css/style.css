@@ -74,7 +74,7 @@ body {
   outline-offset: 2px;
 }
 
-/* Navegación y foco accesible (WCAG 2.4.7) */
+/* NavegaciÃ³n y foco accesible (WCAG 2.4.7) */
 :focus-visible {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
@@ -198,7 +198,7 @@ a {
   font-weight: 600;
 }
 
-/* SEC-06: el cierre de sesión es un POST con CSRF, no un enlace GET */
+/* SEC-06: el cierre de sesiÃ³n es un POST con CSRF, no un enlace GET */
 .logout-form {
   display: inline;
   margin: 0;
@@ -513,8 +513,8 @@ button.logout-submit:hover {
   align-self: flex-start;
 }
 
-/* Separación sobre el botón: como margen del elemento anterior, no como
-   padding del botón (eso desplazaba el texto hacia abajo dentro del botón). */
+/* SeparaciÃ³n sobre el botÃ³n: como margen del elemento anterior, no como
+   padding del botÃ³n (eso desplazaba el texto hacia abajo dentro del botÃ³n). */
 .card-body > :has(+ .btn) {
   margin-bottom: 16px;
 }
@@ -557,7 +557,7 @@ button.logout-submit:hover {
   color: var(--muted-foreground);
 }
 
-/* Página de Proyectos */
+/* PÃ¡gina de Proyectos */
 .proyectos-page {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -1209,7 +1209,7 @@ button.logout-submit:hover {
 }
 
 /* Cuando el aviso se muestra por primera vez, el usuario debe aceptarlo
-   explícitamente: se oculta la X y no se cierra al hacer click afuera
+   explÃ­citamente: se oculta la X y no se cierra al hacer click afuera
    (ver JS en app/Views/layout/footer.php). */
 .legal-modal-mandatory .legal-modal-close {
   display: none;
@@ -1361,7 +1361,7 @@ button.logout-submit:hover {
   margin-bottom: 20px;
 }
 
-/* Cuenta regresiva para reenviar el enlace de recuperación (#79) */
+/* Cuenta regresiva para reenviar el enlace de recuperaciÃ³n (#79) */
 .recovery-countdown {
   text-align: center;
   margin-top: 10px;
@@ -1426,9 +1426,9 @@ button.logout-submit:hover {
   color: var(--destructive);
 }
 
-/* ══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    STAFF PAGE
-   ══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .staff-section {
   padding: 48px 0 80px;
   background: var(--background);
@@ -1502,9 +1502,9 @@ button.logout-submit:hover {
   color: var(--muted-foreground);
 }
 
-/* ══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    NOTICIAS PAGE
-   ══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .noticias-page-section {
   padding: 32px 0 64px;
   background: var(--background);
@@ -1715,9 +1715,9 @@ button.logout-submit:hover {
   color: var(--muted-foreground);
 }
 
-/* ══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    NOTICIA DETAIL PAGE
-   ══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .noticia-detail-section {
   padding: 32px 0 64px;
   background: var(--background);
@@ -1808,9 +1808,9 @@ button.logout-submit:hover {
   margin-bottom: 24px;
 }
 
-/* ══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SERVICIOS PAGE
-   ══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .servicios-section {
   padding: 48px 0 80px;
   background: var(--background);
@@ -1926,9 +1926,9 @@ button.logout-submit:hover {
   margin-bottom: 20px;
 }
 
-/* ══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CONTACTO PAGE
-   ══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .contacto-hero-section {
   min-height: calc(100vh - 200px);
   padding: 56px 16px 80px;
