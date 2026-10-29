@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 declare(strict_types=1);
 
@@ -38,7 +38,7 @@ declare(strict_types=1);
 
 <section class="section section-surface" id="proyectos">
   <div class="container">
-    <h2 class="section-title">Proyectos de SFL</h2>
+    <h2 class="section-title">Proyectos de Techhub</h2>
     <div class="grid grid-proyectos">
       <?php foreach ($proyectos as $p) : ?>
         <article class="card">

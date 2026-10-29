@@ -1,5 +1,5 @@
 -- =============================================================================
---  Datos semilla (seed) de la aplicación SFL ULS
+--  Datos semilla (seed) de la aplicación Techhub ULS
 --  Fecha: 2026-10-17
 -- =============================================================================
 --
@@ -15,13 +15,50 @@
 --
 -- =============================================================================
 
+--
+-- Data for Name: role; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.role (id, name, description) FROM stdin;
+1	superadmin	Acceso total al sistema
+2	admin	Gestión de contenido y usuarios
+3	editor	Edición de contenido
+4	redactor	Creación de noticias propias
+\.
+
+
+--
+-- Data for Name: news_status; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.news_status (id, name) FROM stdin;
+1	pendiente
+2	publicada
+3	archivada
+\.
+
+
+--
+-- Data for Name: tag; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.tag (id, name) FROM stdin;
+1	Desarrollo Web
+2	Inteligencia Artificial
+3	Ciberseguridad
+4	Cloud Computing
+5	DevOps
+\.
+
+
+--
 -- Data for Name: app_user; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.app_user (id, role_id, username, email, password, active, must_change_password) FROM stdin;
-1	1	admin	admin@sfluls.cl	$2y$12$WdqdYonkoKQm1E8msfwkYu92sj5JykU5DUN8nbMqbBAfmqfQR84Yq	t	f
-2	2	editor1	editor@sfluls.cl	$2y$12$QHeO3iESmYSn02nxJlXYUO.nCZD6bcOJpqzlBCSHAWtbGq3UFjLW6	t	f
-3	3	redactor1	redactor@sfluls.cl	$2y$12$QHeO3iESmYSn02nxJlXYUO.nCZD6bcOJpqzlBCSHAWtbGq3UFjLW6	t	f
+1	1	admin	admin@techhub.cl	$2y$12$WdqdYonkoKQm1E8msfwkYu92sj5JykU5DUN8nbMqbBAfmqfQR84Yq	t	f
+2	2	editor1	editor@techhub.cl	$2y$12$QHeO3iESmYSn02nxJlXYUO.nCZD6bcOJpqzlBCSHAWtbGq3UFjLW6	t	f
+3	3	redactor1	redactor@techhub.cl	$2y$12$QHeO3iESmYSn02nxJlXYUO.nCZD6bcOJpqzlBCSHAWtbGq3UFjLW6	t	f
 \.
 
 
@@ -47,7 +84,7 @@ COPY public.contact_request (id, name, email, phone, subject, message, sent_at, 
 --
 
 COPY public.contenido_sitio (id, clave, sobre_titulo, sobre_texto, mision_titulo, mision_texto, vision_titulo, vision_texto, objetivos_titulo, objetivos_texto, politicas_titulo, politicas_texto, created_at, updated_at) FROM stdin;
-1	home	Sobre nosotros	Software Factory Lab es la fábrica de software de la Universidad de La Serena, donde estudiantes y profesionales desarrollan soluciones digitales reales para instituciones y empresas de la región, bajo estándares de la industria.	Misión, visión y objetivos	Formar talento tecnológico mediante la práctica en proyectos reales, entregando productos de calidad que aporten valor al desarrollo regional. Buscamos ser un referente en innovación, transferencia tecnológica y vinculación con el medio.	\N	\N	\N	\N	\N	\N	2026-08-19 04:39:32.817084	\N
+1	home	Sobre nosotros	Techhub es el laboratorio de software de la Universidad de La Serena, donde estudiantes y profesionales desarrollan soluciones digitales reales para instituciones y empresas de la región, bajo estándares de la industria.	Misión, visión y objetivos	Formar talento tecnológico mediante la práctica en proyectos reales, entregando productos de calidad que aporten valor al desarrollo regional. Buscamos ser un referente en innovación, transferencia tecnológica y vinculación con el medio.	\N	\N	\N	\N	\N	\N	2026-08-19 04:39:32.817084	\N
 \.
 
 
@@ -70,7 +107,7 @@ COPY public.enlaces_footer (id, grupo, etiqueta, url, orden, created_at, updated
 --
 
 COPY public.footer_info (id, email, phone, address, copyright_text, social_facebook, social_linkedin, social_twitter, social_instagram, social_youtube) FROM stdin;
-1	contacto@sfluls.cl			© 2026 Software Factory Lab	\N	\N	\N	\N	\N
+1	contacto@techhub.cl			© 2026 Techhub	\N	\N	\N	\N	\N
 \.
 
 
@@ -79,19 +116,8 @@ COPY public.footer_info (id, email, phone, address, copyright_text, social_faceb
 --
 
 COPY public.news (id, author_id, editor_id, status_id, tag_id, title, subtitle, content, image, publication_date, created_at, updated_at) FROM stdin;
-1	1	\N	2	\N	SFL ULS inicia nuevo semestre de proyectos	Se abren las postulaciones para integrar el laboratorio	El laboratorio SFL ULS de la Universidad de La Serena inicia sus actividades del segundo semestre 2026. Se buscan estudiantes interesados en desarrollar proyectos reales.	noticia-1.jpg	2026-08-19 05:09:31.216664	2026-08-19 05:09:31.216664	\N
+1	1	\N	2	\N	Techhub ULS inicia nuevo semestre de proyectos	Se abren las postulaciones para integrar el laboratorio	El laboratorio Techhub ULS de la Universidad de La Serena inicia sus actividades del segundo semestre 2026. Se buscan estudiantes interesados en desarrollar proyectos reales.	noticia-1.jpg	2026-08-19 05:09:31.216664	2026-08-19 05:09:31.216664	\N
 2	1	\N	1	\N	Hackathon de Innovación 2026	Evento de 48 horas de desarrollo intensivo	Se realizará una hackathon donde los equipos deberán crear soluciones tecnológicas para problemáticas regionales.	noticia-1.jpg	\N	2026-08-19 05:09:31.216664	\N
-\.
-
-
---
--- Data for Name: news_status; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.news_status (id, name) FROM stdin;
-1	pendiente
-2	publicada
-3	archivada
 \.
 
 
@@ -103,18 +129,6 @@ COPY public.project (id, name, description, image, link, active) FROM stdin;
 1	Sistema de Gestión Académica	Plataforma para gestión de notas y asistencia universitaria	proyecto-1.jpg	\N	t
 2	App de Seguimiento de Salud	Aplicación móvil para monitoreo de signos vitales	proyecto-1.jpg	\N	t
 3	Portal de Vinculación con el Medio	Sitio web que conecta proyectos estudiantiles con la comunidad	proyecto-1.jpg	\N	t
-\.
-
-
---
--- Data for Name: role; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.role (id, name, description) FROM stdin;
-1	superadmin	Acceso total al sistema
-2	admin	Gestión de contenido y usuarios
-3	editor	Edición de contenido
-4	redactor	Creación de noticias propias
 \.
 
 
@@ -134,19 +148,6 @@ COPY public.service (id, name, description, image, link, active) FROM stdin;
 --
 
 COPY public.staff_member (id, name, "position", photo, description) FROM stdin;
-\.
-
-
---
--- Data for Name: tag; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.tag (id, name) FROM stdin;
-1	Desarrollo Web
-2	Inteligencia Artificial
-3	Ciberseguridad
-4	Cloud Computing
-5	DevOps
 \.
 
 
@@ -189,7 +190,7 @@ SELECT pg_catalog.setval('public.enlaces_footer_id_seq', 6, true);
 -- Name: footer_info_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.footer_info_id_seq', 1, false);
+SELECT pg_catalog.setval('public.footer_info_id_seq', 1, true);
 
 
 --
@@ -203,7 +204,7 @@ SELECT pg_catalog.setval('public.news_id_seq', 2, true);
 -- Name: news_status_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.news_status_id_seq', 1, false);
+SELECT pg_catalog.setval('public.news_status_id_seq', 3, true);
 
 
 --
@@ -217,7 +218,7 @@ SELECT pg_catalog.setval('public.project_id_seq', 3, true);
 -- Name: role_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.role_id_seq', 1, false);
+SELECT pg_catalog.setval('public.role_id_seq', 4, true);
 
 
 --

@@ -39,9 +39,9 @@ final class AdminFooterTest extends TestCase
         ];
         $editingFooterLink = null;
         $footerInfo = [
-            'social_linkedin'  => 'https://linkedin.com/company/sfl',
-            'social_twitter'   => 'https://twitter.com/sfl',
-            'social_instagram' => 'https://instagram.com/sfl',
+            'social_linkedin'  => 'https://linkedin.com/company/techhub',
+            'social_twitter'   => 'https://twitter.com/techhub',
+            'social_instagram' => 'https://instagram.com/techhub',
         ];
         $activeTab = 'footer';
 
@@ -54,7 +54,7 @@ final class AdminFooterTest extends TestCase
         $this->assertStringContainsString('/noticias', $output);
         $this->assertStringContainsString('Inicio', $output);
         $this->assertStringContainsString('Redes sociales', $output);
-        $this->assertStringContainsString('https://linkedin.com/company/sfl', $output);
+        $this->assertStringContainsString('https://linkedin.com/company/techhub', $output);
         $this->assertStringContainsString('Nuevo registro', $output);
         $this->assertStringContainsString('Columna (Sitio, Contenido, Contacto)', $output);
         $this->assertStringContainsString('Texto del enlace', $output);

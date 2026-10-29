@@ -57,11 +57,11 @@ final class ProyectosController extends Controller
         ], $items);
 
         $this->render('proyectos', [
-            'pageTitle' => 'Proyectos — SFL ULS Lab',
-            'metaDescription' => 'Conoce los proyectos desarrollados por el Software Factory Lab de la Universidad de La Serena.',
+            'pageTitle' => 'Proyectos — Techhub ULS',
+            'metaDescription' => 'Conoce los proyectos desarrollados por el Techhub Universidad de La Serena.',
             'proyectos' => $proyectos,
             'enlacesFooter' => $footer['links'] ?? [],
-            'contacto' => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@sfl.uls.cl'],
+            'contacto' => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@techhub.cl'],
         ]);
     }
 
@@ -115,12 +115,12 @@ final class ProyectosController extends Controller
         ], $otrosProyectos), 0, 3);
 
         $this->render('proyecto', [
-            'pageTitle' => $proyecto['titulo'] . ' — SFL ULS Lab',
+            'pageTitle' => $proyecto['titulo'] . ' — Techhub ULS',
             'metaDescription' => mb_strimwidth(strip_tags((string) $proyecto['descripcion']), 0, 160, '…'),
             'proyecto' => $proyecto,
             'otrosProyectos' => $otrosProyectos,
             'enlacesFooter' => $footer['links'] ?? [],
-            'contacto' => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@sfl.uls.cl'],
+            'contacto' => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@techhub.cl'],
         ]);
     }
 }

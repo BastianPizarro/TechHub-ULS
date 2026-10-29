@@ -1,6 +1,6 @@
 # Guía de Despliegue y Puesta en Producción (Hosting)
 
-Esta guía detalla los pasos y consideraciones para desplegar la plataforma **Software Factory Lab & Tech Hub ULS** en un entorno de producción (servidor VPS, nube o servidor institucional).
+Esta guía detalla los pasos y consideraciones para desplegar la plataforma **Techhub & Tech Hub ULS** en un entorno de producción (servidor VPS, nube o servidor institucional).
 
 ---
 
@@ -21,12 +21,12 @@ Esta guía detalla los pasos y consideraciones para desplegar la plataforma **So
 ## 2. Preparación del Entorno en el Servidor
 
 ### 2.1 Clonar el repositorio
-Ubica la aplicación en el directorio web estándar (por ejemplo, `/var/www/sfl-uls`):
+Ubica la aplicación en el directorio web estándar (por ejemplo, `/var/www/techhub-uls`):
 
 ```bash
 cd /var/www
-sudo git clone https://github.com/vicentecampana-svg/PPII-004-PPII-005.git sfl-uls
-cd sfl-uls
+sudo git clone https://github.com/vicentecampana-svg/PPII-004-PPII-005.git techhub-uls
+cd techhub-uls
 ```
 
 ### 2.2 Instalar dependencias de producción
@@ -53,12 +53,12 @@ Ejemplo de configuración de producción:
 APP_ENV=production
 APP_PORT=80
 APP_DEBUG=false
-APP_URL=https://sfl.userena.cl
+APP_URL=https://techhub.userena.cl
 
 # Base de datos PostgreSQL
 # Rol de bootstrap/administración (solo tareas de admin; la app NUNCA
 # se conecta con el superusuario — principio de mínimos privilegios, issue #94)
-POSTGRES_DB=sfl_production
+POSTGRES_DB=techhub_production
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=ContraseñaAdminDB
 POSTGRES_HOST=127.0.0.1
@@ -66,8 +66,8 @@ POSTGRES_PORT=5432
 
 # Conexión de la aplicación — rol con LOGIN, dueño de la base de datos,
 # sin SUPERUSER/CREATEDB/CREATEROLE (se crea en la sección 4)
-PG_DATABASE=sfl_production
-PG_USER=sfl_user
+PG_DATABASE=techhub_production
+PG_USER=techhub_user
 PG_PASSWORD=TuPasswordSuperSeguro123!
 PG_HOST=127.0.0.1
 PG_PORT=5432
@@ -82,6 +82,9 @@ SMTP_USER=no-reply@uls.cl
 SMTP_PASS=
 SMTP_FROM=no-reply@uls.cl
 SMTP_FROM_NAME=TechHub ULS
+
+# URL del sitio de Software Factory Lab (enlace "Página creada por..." del footer)
+SFL_URL=https://www.sfl/credits
 ```
 
 > ⚠️ **Importante**: Asegúrate de que el archivo `.env` tenga permisos restrictivos para que solo el usuario del servidor web pueda leerlo (`chmod 600 .env`).
@@ -91,20 +94,20 @@ SMTP_FROM_NAME=TechHub ULS
 ## 4. Base de Datos PostgreSQL
 
 > ⚠️ **Principio de mínimos privilegios (issue #94)**: la aplicación se conecta
-> siempre con `sfl_user` (un rol con LOGIN, dueño de la base de datos, sin
+> siempre con `techhub_user` (un rol con LOGIN, dueño de la base de datos, sin
 > `SUPERUSER`/`CREATEDB`/`CREATEROLE`). Nunca configures la app para
 > conectarse con el superusuario `postgres`.
 
 1. Crear el rol de aplicación (mínimos privilegios) y la base de datos:
 ```bash
-sudo -u postgres psql -c "CREATE USER sfl_user WITH LOGIN PASSWORD 'TuPasswordSuperSeguro123!' NOSUPERUSER NOCREATEDB NOCREATEROLE;"
-sudo -u postgres psql -c "CREATE DATABASE sfl_production OWNER sfl_user;"
+sudo -u postgres psql -c "CREATE USER techhub_user WITH LOGIN PASSWORD 'TuPasswordSuperSeguro123!' NOSUPERUSER NOCREATEDB NOCREATEROLE;"
+sudo -u postgres psql -c "CREATE DATABASE techhub_production OWNER techhub_user;"
 ```
 
 2. Cargar el esquema inicial y datos **con el usuario de aplicación** (así las
-   tablas quedan a nombre de `sfl_user`, no del superusuario):
+   tablas quedan a nombre de `techhub_user`, no del superusuario):
 ```bash
-psql -U sfl_user -d sfl_production -h 127.0.0.1 -f config/schema.sql
+psql -U techhub_user -d techhub_production -h 127.0.0.1 -f config/schema.sql
 ```
 
 ---
@@ -114,10 +117,10 @@ psql -U sfl_user -d sfl_production -h 127.0.0.1 -f config/schema.sql
 El servidor web (`www-data` en Debian/Ubuntu) requiere permisos de escritura en los directorios de almacenamiento de sesiones, registros y subida de archivos:
 
 ```bash
-sudo chown -R www-data:www-data /var/www/sfl-uls
-sudo chmod -R 755 /var/www/sfl-uls
-sudo chmod -R 775 /var/www/sfl-uls/storage
-sudo chmod -R 775 /var/www/sfl-uls/public/uploads
+sudo chown -R www-data:www-data /var/www/techhub-uls
+sudo chmod -R 755 /var/www/techhub-uls
+sudo chmod -R 775 /var/www/techhub-uls/storage
+sudo chmod -R 775 /var/www/techhub-uls/public/uploads
 ```
 
 ---
@@ -131,13 +134,13 @@ sudo chmod -R 775 /var/www/sfl-uls/public/uploads
 sudo a2enmod rewrite headers ssl
 ```
 
-2. Crear el archivo de configuración del VirtualHost (`/etc/apache2/sites-available/sfl.conf`):
+2. Crear el archivo de configuración del VirtualHost (`/etc/apache2/sites-available/techhub.conf`):
 ```apache
 <VirtualHost *:80>
-    ServerName sfl.userena.cl
-    DocumentRoot /var/www/sfl-uls/public
+    ServerName techhub.userena.cl
+    DocumentRoot /var/www/techhub-uls/public
 
-    <Directory /var/www/sfl-uls/public>
+    <Directory /var/www/techhub-uls/public>
         Options -Indexes +FollowSymLinks
         AllowOverride All
         Require all granted
@@ -149,14 +152,14 @@ sudo a2enmod rewrite headers ssl
         RewriteRule ^ index.php [L,QSA]
     </Directory>
 
-    ErrorLog ${APACHE_LOG_DIR}/sfl_error.log
-    CustomLog ${APACHE_LOG_DIR}/sfl_access.log combined
+    ErrorLog ${APACHE_LOG_DIR}/techhub_error.log
+    CustomLog ${APACHE_LOG_DIR}/techhub_access.log combined
 </VirtualHost>
 ```
 
 3. Habilitar el sitio y reiniciar Apache:
 ```bash
-sudo a2ensite sfl.conf
+sudo a2ensite techhub.conf
 sudo systemctl restart apache2
 ```
 
@@ -164,13 +167,13 @@ sudo systemctl restart apache2
 
 ### Opción B: Nginx + PHP-FPM
 
-Crear el bloque de servidor (`/etc/nginx/sites-available/sfl`):
+Crear el bloque de servidor (`/etc/nginx/sites-available/techhub`):
 
 ```nginx
 server {
     listen 80;
-    server_name sfl.userena.cl;
-    root /var/www/sfl-uls/public;
+    server_name techhub.userena.cl;
+    root /var/www/techhub-uls/public;
     index index.php;
 
     client_max_body_size 20M;
@@ -194,7 +197,7 @@ server {
 
 Habilitar y recargar Nginx:
 ```bash
-sudo ln -s /etc/nginx/sites-available/sfl /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/techhub /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
 ```
@@ -207,7 +210,7 @@ Instalar y ejecutar Certbot para configurar SSL automáticamente con Let's Encry
 
 ```bash
 sudo apt install certbot python3-certbot-apache # (o python3-certbot-nginx)
-sudo certbot --apache -d sfl.userena.cl
+sudo certbot --apache -d techhub.userena.cl
 ```
 
 ---
@@ -217,7 +220,7 @@ sudo certbot --apache -d sfl.userena.cl
 Para desplegar una nueva versión del código en producción:
 
 ```bash
-cd /var/www/sfl-uls
+cd /var/www/techhub-uls
 sudo git pull origin main
 sudo composer install --no-dev --optimize-autoloader
 sudo systemctl reload apache2 # o systemctl reload php8.2-fpm

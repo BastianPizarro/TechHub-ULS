@@ -66,11 +66,11 @@ final class ServiciosController extends Controller
         }
 
         $this->render('servicios', [
-            'pageTitle' => 'Servicios — SFL ULS Lab',
-            'metaDescription' => 'Conoce los servicios de desarrollo de software, consultoría tecnológica y capacitación que ofrece el Software Factory Lab de la Universidad de La Serena.',
+            'pageTitle' => 'Servicios — Techhub ULS',
+            'metaDescription' => 'Conoce los servicios de desarrollo de software, consultoría tecnológica y capacitación que ofrece el Techhub Universidad de La Serena.',
             'servicios' => $servicios,
             'enlacesFooter' => $footer['links'] ?? [],
-            'contacto' => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@sfl.uls.cl'],
+            'contacto' => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@techhub.cl'],
         ]);
     }
 }

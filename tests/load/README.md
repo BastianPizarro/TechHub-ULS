@@ -1,4 +1,4 @@
-# Escenarios de Pruebas de Carga (Load Testing) — SFL ULS Lab
+# Escenarios de Pruebas de Carga (Load Testing) — Techhub ULS
 
 Este directorio contiene los escenarios de prueba de carga reproducibles requeridos por el **SRS**, diseñados para evaluar el rendimiento del sistema bajo una concurrencia de **110 usuarios simultáneos**.
 

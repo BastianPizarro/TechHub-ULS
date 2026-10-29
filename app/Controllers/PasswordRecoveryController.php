@@ -56,7 +56,7 @@ final class PasswordRecoveryController extends Controller
             'enlacesFooter'     => $footer['links'] ?? [],
             'contacto'          => $footer['info'] ?? [
                 'address' => 'La Serena, Chile',
-                'email'   => 'contacto@sfl.uls.cl',
+                'email'   => 'contacto@techhub.cl',
             ],
         ]);
 
@@ -117,7 +117,7 @@ final class PasswordRecoveryController extends Controller
             'token'           => $token,
             'errors'          => $_SESSION['_reset_errors'] ?? [],
             'enlacesFooter'   => $footer['links'] ?? [],
-            'contacto'        => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@sfl.uls.cl'],
+            'contacto'        => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@techhub.cl'],
         ]);
 
         unset($_SESSION['_reset_errors']);

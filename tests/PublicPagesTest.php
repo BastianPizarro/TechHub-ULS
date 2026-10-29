@@ -170,13 +170,13 @@ final class PublicPagesTest extends TestCase
         $proyectos = [
             [
                 'id' => 1,
-                'titulo' => 'Proyecto SFL Alpha',
+                'titulo' => 'Proyecto Techhub Alpha',
                 'descripcion' => 'Descripción del proyecto Alpha.',
                 'imagen_url' => 'alpha.jpg',
             ],
             [
                 'id' => 2,
-                'titulo' => 'Proyecto SFL Beta',
+                'titulo' => 'Proyecto Techhub Beta',
                 'descripcion' => 'Descripción mucho más larga del proyecto Beta para verificar diseño.',
                 'imagen_url' => 'beta.jpg',
             ],
@@ -186,9 +186,9 @@ final class PublicPagesTest extends TestCase
         require dirname(__DIR__) . '/app/Views/proyectos.php';
         $output = ob_get_clean();
 
-        $this->assertStringContainsString('Proyectos de SFL', $output);
-        $this->assertStringContainsString('Proyecto SFL Alpha', $output);
-        $this->assertStringContainsString('Proyecto SFL Beta', $output);
+        $this->assertStringContainsString('Proyectos de Techhub', $output);
+        $this->assertStringContainsString('Proyecto Techhub Alpha', $output);
+        $this->assertStringContainsString('Proyecto Techhub Beta', $output);
         $this->assertStringContainsString('proyecto-tile', $output);
         $this->assertStringContainsString('proyecto-tile-action', $output);
         $this->assertStringContainsString('Ver más', $output);

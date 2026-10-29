@@ -1,6 +1,6 @@
-# Software Factory Lab & Tech Hub — ULS
+# Techhub & Tech Hub — ULS
 
-Portal web institucional y sistema de gestión de contenidos para el **Software Factory Lab (SFL)** y el **Tech Hub** de la **Universidad de La Serena**.
+Portal web institucional y sistema de gestión de contenidos para el **Techhub** y el **Tech Hub** de la **Universidad de La Serena**.
 
 ---
 
@@ -129,5 +129,5 @@ El archivo [`config/schema.sql`](config/schema.sql) incluye usuarios precargados
 
 ## 📄 Licencia
 
-Desarrollado para la **Universidad de La Serena** por el equipo de desarrollo de Software Factory Lab. Todos los derechos reservados.
+Desarrollado para la **Universidad de La Serena** por el equipo de desarrollo de Techhub. Todos los derechos reservados.
 

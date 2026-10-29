@@ -4,8 +4,8 @@
  * @var string $metaDescription (opcional)
  * @var array $enlacesFooter (no se usa aquí, disponible para futuras vistas)
  */
-$pageTitle ??= 'SFL ULS Lab — Software Factory Lab Universidad de La Serena';
-$metaDescription ??= 'Software Factory Lab de la Universidad de La Serena: proyectos, servicios, staff y noticias del laboratorio de desarrollo de software.';
+$pageTitle ??= 'Techhub Universidad de La Serena';
+$metaDescription ??= 'Techhub Universidad de La Serena: proyectos, servicios, staff y noticias del laboratorio de desarrollo de software.';
 $currentPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/';
 
 $isLoggedIn = authCheck();

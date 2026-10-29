@@ -40,7 +40,7 @@ class MailerService
     {
         $this->driver     = getenv('MAIL_DRIVER') ?: 'log';
         $this->fromEmail  = getenv('SMTP_FROM') ?: getenv('RESEND_FROM') ?: 'onboarding@resend.dev';
-        $this->fromName   = getenv('SMTP_FROM_NAME') ?: 'Software Factory Lab ULS';
+        $this->fromName   = getenv('SMTP_FROM_NAME') ?: 'Techhub ULS';
         $this->logPath    = dirname(__DIR__, 2) . '/storage/logs/mail_dev.log';
     }
 
@@ -101,7 +101,7 @@ class MailerService
         $subject = 'Nueva consulta de contacto — ' . (($contact['subject'] ?? 'Formulario') ?: 'Formulario');
         $body    = $this->buildContactNotificationBody($contact);
 
-        return $this->send($toEmail, 'Encargado SFL ULS', $subject, $body);
+        return $this->send($toEmail, 'Encargado Techhub ULS', $subject, $body);
     }
 
     // ──────────────────────────────────────────────
@@ -248,7 +248,7 @@ class MailerService
             <h2 class="email-title">Recuperación de contraseña</h2>
             <p>Hola, <strong>{$safeName}</strong>.</p>
             <p>Recibimos una solicitud para restablecer la contraseña de tu cuenta en
-               <strong>Software Factory Lab ULS</strong>. Haz clic en el botón para continuar:</p>
+               <strong>Techhub ULS</strong>. Haz clic en el botón para continuar:</p>
             <p class="btn-action-wrapper">
               <a href="{$safeLink}" class="btn-action">
                 Restablecer contraseña
@@ -264,7 +264,7 @@ class MailerService
             </p>
             <hr class="email-divider">
             <p class="email-footer">
-              Software Factory Lab (SFL) — Universidad de La Serena
+              Techhub — Universidad de La Serena
             </p>
           </div>
         </body>
@@ -331,7 +331,7 @@ class MailerService
             </div>
             <hr class="email-divider">
             <p class="email-footer">
-              TechHub — Software Factory Lab, Universidad de La Serena
+              Techhub — Universidad de La Serena
             </p>
           </div>
         </body>

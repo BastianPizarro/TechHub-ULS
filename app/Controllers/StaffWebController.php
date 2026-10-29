@@ -84,11 +84,11 @@ final class StaffWebController extends Controller
         }
 
         $this->render('staff', [
-            'pageTitle' => 'Miembros del Staff — SFL ULS Lab',
-            'metaDescription' => 'Conoce al equipo de profesionales y desarrolladores del Software Factory Lab de la Universidad de La Serena.',
+            'pageTitle' => 'Miembros del Staff — Techhub ULS',
+            'metaDescription' => 'Conoce al equipo de profesionales y desarrolladores del Techhub Universidad de La Serena.',
             'staff' => $staff,
             'enlacesFooter' => $footer['links'] ?? [],
-            'contacto' => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@sfl.uls.cl'],
+            'contacto' => $footer['info'] ?? ['address' => 'La Serena, Chile', 'email' => 'contacto@techhub.cl'],
         ]);
     }
 }

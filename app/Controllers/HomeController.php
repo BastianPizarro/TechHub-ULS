@@ -56,8 +56,8 @@ final class HomeController extends Controller
             'enlacesFooter' => $footer['links'],
             'contacto'      => $footer['info'] ?? [
                 'address'          => 'La Serena, Chile',
-                'email'            => 'contacto@sfl.uls.cl',
-                'copyright_text'   => '© SFL. Todos los derechos reservados',
+                'email'            => 'contacto@techhub.cl',
+                'copyright_text'   => '© Techhub. Todos los derechos reservados',
                 'social_linkedin'  => '#',
                 'social_twitter'   => '#',
                 'social_instagram' => '#',
@@ -73,7 +73,7 @@ final class HomeController extends Controller
 
         return [
             'sobre_titulo' => 'Sobre nosotros',
-            'sobre_texto' => "Software Factory Lab (SFL) es el laboratorio de desarrollo de software de la "
+            'sobre_texto' => "Techhub es el laboratorio de desarrollo de software de la "
                 . "Universidad de La Serena, donde estudiantes y académicos trabajan junto a organizaciones "
                 . "públicas y privadas en proyectos tecnológicos reales, combinando formación práctica con "
                 . "estándares profesionales de la industria del software.",

@@ -4,18 +4,21 @@ namespace Tests\Services;
 
 use PHPUnit\Framework\TestCase;
 use App\Services\NewsService;
+use App\Services\AuditService;
 use App\Repositories\NewsRepository;
 
 class NewsServiceTest extends TestCase
 {
     private $repoMock;
+    private $auditMock;
     private $service;
 
     protected function setUp(): void
     {
         parent::setUp();
         $this->repoMock = $this->createMock(NewsRepository::class);
-        $this->service = new NewsService($this->repoMock);
+        $this->auditMock = $this->createMock(AuditService::class);
+        $this->service = new NewsService($this->repoMock, $this->auditMock);
     }
 
     public function testGetAllReturnsPaginatedData()
@@ -58,6 +61,10 @@ class NewsServiceTest extends TestCase
         $this->repoMock->method('getStatusId')->with('pendiente')->willReturn(1);
         $this->repoMock->method('create')->willReturn(1);
         $this->repoMock->method('findById')->with(1)->willReturn(['id' => 1] + $data);
+        $this->auditMock->expects($this->once())
+            ->method('log')
+            ->with(1, 'crear', 'news', 1, 'Noticia creada: Test News')
+            ->willReturn(1);
 
         $result = $this->service->create($data, 1);
 

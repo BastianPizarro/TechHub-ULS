@@ -1,6 +1,6 @@
 # Guía de Pruebas y Calidad de Software (Testing)
 
-Este documento describe la arquitectura, ejecución y mejores prácticas de la suite de pruebas automatizadas del proyecto **Software Factory Lab & Tech Hub ULS**.
+Este documento describe la arquitectura, ejecución y mejores prácticas de la suite de pruebas automatizadas del proyecto **Techhub & Tech Hub ULS**.
 
 ---
 

@@ -43,7 +43,7 @@ final class AccessibilityTest extends TestCase
         $this->assertStringContainsString('aria-controls="mobile-nav"', $output);
 
         // 5. Logo alt text
-        $this->assertStringContainsString('alt="Software Factory Lab Universidad de La Serena"', $output);
+        $this->assertStringContainsString('alt="Tech Hub Universidad de La Serena"', $output);
     }
 
     public function testFooterHasAccessibleLandmarksAndSocialLabels(): void
@@ -51,11 +51,11 @@ final class AccessibilityTest extends TestCase
         $enlacesFooter = [];
         $contacto = [
             'address' => 'La Serena, Chile',
-            'email' => 'contacto@sfl.uls.cl',
+            'email' => 'contacto@techhub.cl',
             'social_linkedin' => 'https://linkedin.com',
             'social_twitter' => 'https://twitter.com',
             'social_instagram' => 'https://instagram.com',
-            'copyright_text' => '© SFL. Todos los derechos reservados',
+            'copyright_text' => '© Techhub. Todos los derechos reservados',
         ];
         $currentPath = '/';
 
@@ -70,9 +70,9 @@ final class AccessibilityTest extends TestCase
         // identidad visual) — el logo accesible del sitio vive en el header.
 
         // 3. Social link accessible names
-        $this->assertStringContainsString('aria-label="Software Factory Lab en LinkedIn (abre en pestaña nueva)"', $output);
-        $this->assertStringContainsString('aria-label="Software Factory Lab en X / Twitter (abre en pestaña nueva)"', $output);
-        $this->assertStringContainsString('aria-label="Software Factory Lab en Instagram (abre en pestaña nueva)"', $output);
+        $this->assertStringContainsString('aria-label="Techhub en LinkedIn (abre en pestaña nueva)"', $output);
+        $this->assertStringContainsString('aria-label="Techhub en X / Twitter (abre en pestaña nueva)"', $output);
+        $this->assertStringContainsString('aria-label="Techhub en Instagram (abre en pestaña nueva)"', $output);
 
         // 4. Rel security on external links
         $this->assertStringContainsString('rel="noopener noreferrer"', $output);
